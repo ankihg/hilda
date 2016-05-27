@@ -20,11 +20,17 @@ module.exports = (router, models) => {
     });
 
   router.route('/'+resource+'/:id')
+    .put((req, res) => {
+      Resource.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, data) => {
+        if (err) return res.status(500).json({msg:'error updating '+req.body.name, err: err});
+        return res.status(200).json({msg:'updated '+data.name, data: data});
+      })
+    })
     .delete((req, res) => {
       Resource.findByIdAndRemove(req.params.id, (err) => {
         if (err) return res.status(500).json({msg:'error deleting '+req.body.name, err: err});
         return res.status(200).json({msg:`deleted ${resource}:${req.params.id}`});
       })
-    })
+    });
 
 }
