@@ -7,7 +7,7 @@ const sources = {
   js: __dirname + '/src/index.js',
   html: __dirname + '/src/**/*.html',
   css: __dirname + '/src/styles/**/*.css',
-  media: __dirname + '/src/assets/**/*.*',
+  assets: __dirname + '/src/assets/**/*.*',
   vendors: __dirname + '/src/vendors/*.*'
 }
 
@@ -27,9 +27,9 @@ gulp.task('copyCss', () => {
     .pipe(gulp.dest('./build/styles'));
 });
 
-gulp.task('copyMedia', () => {
-  return gulp.src(sources.media)
-    .pipe(gulp.dest('./build/media'));
+gulp.task('copyAssets', () => {
+  return gulp.src(sources.assets)
+    .pipe(gulp.dest('./build/assets'));
 });
 
 gulp.task('copyVendors', () => {
@@ -37,4 +37,4 @@ gulp.task('copyVendors', () => {
     .pipe(gulp.dest('./build/vendors'));
 });
 
-gulp.task('default', ['bundle:dev', 'copyHtml', 'copyCss', 'copyMedia', 'copyVendors']);
+gulp.task('default', ['bundle:dev', 'copyHtml', 'copyCss', 'copyAssets', 'copyVendors']);

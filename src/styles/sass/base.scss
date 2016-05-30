@@ -1,5 +1,7 @@
-$bg-colr: #00ff00;
+$bg-colr: #000;
+$colr: #05F5DD;
 
 body {
+  color: $colr;
   background-color: $bg-colr;
 }
