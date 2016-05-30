@@ -32136,12 +32136,29 @@
 
 /***/ },
 /* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = (app) => {
+	  // require('fs').readdirSync('./directives').forEach((file) => {
+	  //   if (file !== 'index.js' && file !== 'templates') require(__dirname+'/'+file)(app);
+	  // });
+
+	  __webpack_require__(6)(app);
+	}
+
+
+/***/ },
+/* 6 */
 /***/ function(module, exports) {
 
 	module.exports = (app) => {
-	  // require('fs').readdirSync('./routes').forEach((file) => {
-	  //   if (file !== 'index.js') require(__dirname+'/'+file)(app);
-	  // });
+	  app.directive('navMenu', () => {
+	    return {
+	      restrict: 'E',
+	      replace: true,
+	      templateUrl: './directives/templates/nav-menu.html'
+	    }
+	  });
 	}
 
 

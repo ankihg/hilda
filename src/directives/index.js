@@ -1,5 +1,7 @@
 module.exports = (app) => {
-  // require('fs').readdirSync('./routes').forEach((file) => {
-  //   if (file !== 'index.js') require(__dirname+'/'+file)(app);
+  // require('fs').readdirSync('./directives').forEach((file) => {
+  //   if (file !== 'index.js' && file !== 'templates') require(__dirname+'/'+file)(app);
   // });
+
+  require('./nav-menu')(app);
 }
