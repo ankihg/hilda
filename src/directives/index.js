@@ -3,5 +3,5 @@ module.exports = (app) => {
   //   if (file !== 'index.js' && file !== 'templates') require(__dirname+'/'+file)(app);
   // });
 
-  require('./nav-menu')(app);
+  require('./nav-menu-directive')(app);
 }
