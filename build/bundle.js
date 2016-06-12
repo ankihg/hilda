@@ -50,6 +50,8 @@
 
 	const app = angular.module('HildaApp', []);
 	__webpack_require__(5)(app);
+	__webpack_require__(7)(app);
+	__webpack_require__(9)(app);
 
 
 /***/ },
@@ -32139,10 +32141,6 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = (app) => {
-	  // require('fs').readdirSync('./directives').forEach((file) => {
-	  //   if (file !== 'index.js' && file !== 'templates') require(__dirname+'/'+file)(app);
-	  // });
-
 	  __webpack_require__(6)(app);
 	}
 
@@ -32152,11 +32150,85 @@
 /***/ function(module, exports) {
 
 	module.exports = (app) => {
+
+	  app.factory('NavService', ['$location', function($location) {
+
+	    this.getLocation = function() {
+	      return $location.path();
+	    }
+
+	    this.plz = "h i l d a";
+
+	    this.destinations = {
+	      home: '/',
+	      about: '/about'
+	    }
+
+
+	    this.go = function(destination) {
+	      $location.path(destinations[destination]);
+	    }
+
+	    return this;
+
+	  }])
+
+
+
+	}
+
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = (app) => {
+	  __webpack_require__(8)(app);
+	}
+
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+	module.exports = (app) => {
+	  app.controller('NavController', ['NavService', function(NavService) {
+
+	    var vm = this;
+	    vm.NavService = NavService
+	    vm.plz = 'hi';
+
+	    return vm;
+
+	  }])
+	}
+
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = (app) => {
+	  // require('fs').readdirSync('./directives').forEach((file) => {
+	  //   if (file !== 'index.js' && file !== 'templates') require(__dirname+'/'+file)(app);
+	  // });
+
+	  __webpack_require__(10)(app);
+	}
+
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	module.exports = (app) => {
 	  app.directive('navMenu', () => {
 	    return {
 	      restrict: 'E',
 	      replace: true,
-	      templateUrl: './directives/templates/nav-menu.html'
+	      templateUrl: './directives/templates/nav-menu.html',
+	      controller: 'NavController',
+	      controllerAs: 'navCtrl'
 	    }
 	  });
 	}
