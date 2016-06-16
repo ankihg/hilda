@@ -48,10 +48,19 @@
 	const angular = __webpack_require__(1);
 	__webpack_require__(3);
 
-	const app = angular.module('HildaApp', []);
+	const app = angular.module('HildaApp', ['ngRoute']);
 	__webpack_require__(5)(app);
 	__webpack_require__(7)(app);
-	__webpack_require__(9)(app);
+	__webpack_require__(10)(app);
+
+	app.config(['$routeProvider', function(router) {
+	  router
+	    .when('/', {
+	      controller: 'HomeController',
+	      controllerAs: 'homeCtrl',
+	      templateUrl: './views/home.html'
+	    })
+	}])
 
 
 /***/ },
@@ -32197,7 +32206,9 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = (app) => {
+	  console.log('hi from controllers index');
 	  __webpack_require__(8)(app);
+	  __webpack_require__(9)(app);
 	}
 
 
@@ -32207,6 +32218,7 @@
 
 	module.exports = (app) => {
 	  app.controller('NavController', ['NavService', function(NavService) {
+	    console.log('hi from nav controller');
 
 	    var vm = this;
 	    vm.NavService = NavService
@@ -32220,6 +32232,24 @@
 
 /***/ },
 /* 9 */
+/***/ function(module, exports) {
+
+	module.exports = (app) => {
+	  console.log('hi from home-controller.js');
+	  app.controller('HomeController', [function() {
+	    console.log('hi from home controller');
+
+	    var vm = this;
+	    vm.plz = 'welcome';
+
+	    return vm;
+
+	  }])
+	}
+
+
+/***/ },
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = (app) => {
@@ -32227,14 +32257,14 @@
 	  //   if (file !== 'index.js' && file !== 'templates') require(__dirname+'/'+file)(app);
 	  // });
 
-	  __webpack_require__(10)(app);
 	  __webpack_require__(11)(app);
+	  __webpack_require__(12)(app);
 
 	}
 
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports) {
 
 	module.exports = (app) => {
@@ -32251,7 +32281,7 @@
 
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports) {
 
 	module.exports = (app) => {

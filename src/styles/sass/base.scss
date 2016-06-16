@@ -1,8 +1,16 @@
-$bg-colr: #000;
 $colr: #05F5DD;
+$borderColr: #ED32D7;
 
 body {
   color: $colr;
-  // background-color: $bg-colr;
   background-image: url('../assets/starry-sky.png')
+}
+
+main {
+  top: 300px;
+}
+
+section {
+  border: solid $borderColr;
+  background-color: rgba(255, 255, 255, .5);
 }

@@ -2,4 +2,11 @@ body {
   color: #05F5DD;
   background-image: url("../assets/starry-sky.png"); }
 
+main {
+  top: 300px; }
+
+section {
+  border: solid #ED32D7;
+  background-color: rgba(255, 255, 255, 0.5); }
+
 /*# sourceMappingURL=base.css.map */

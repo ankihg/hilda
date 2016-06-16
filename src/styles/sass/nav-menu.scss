@@ -1,9 +1,10 @@
 #nav-menu {
-  position: fixed;
+  position: relative;
   margin: 0% auto;
   width: 70%;
-  left: 15%;
   height: 250px;
+  max-width: 100%;
+  max-height: 100%;
   background-image: url('../assets/bone-menu.png');
   background-property: contain;
   background-repeat: no-repeat;
