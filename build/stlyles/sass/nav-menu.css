@@ -1,0 +1,12 @@
+#nav-menu {
+  position: fixed;
+  margin: 0% auto;
+  width: 70%;
+  left: 15%;
+  height: 250px;
+  background-image: url("../assets/bone-menu.png");
+  background-property: contain;
+  background-repeat: no-repeat;
+  background-size: 100% 100%; }
+
+/*# sourceMappingURL=nav-menu.css.map */
