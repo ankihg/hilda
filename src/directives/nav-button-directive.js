@@ -3,7 +3,7 @@ module.exports = (app) => {
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: __dirname+'/templates/nav-button.html'
+      templateUrl: './directives/templates/nav-button.html'
     }
   })
 }

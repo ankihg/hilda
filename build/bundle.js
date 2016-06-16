@@ -32149,6 +32149,7 @@
 /* 6 */
 /***/ function(module, exports) {
 
+	'use strict';
 	module.exports = (app) => {
 
 	  app.factory('NavService', ['$location', function($location) {
@@ -32159,14 +32160,27 @@
 
 	    this.plz = "h i l d a";
 
-	    this.destinations = {
-	      home: '/',
-	      about: '/about'
+	    var Link = function(name, path) {
+	      this.name = name;
+	      this.path = path;
+	    }
+	    Link.prototype.go = function() {
+	      $location.path(this.path);
 	    }
 
+	    this.links = {
+	      home: new Link('home', '/'),
+	      about: new Link('about', '/about'),
+	    }
+
+	    this.linksArr = (()=> {
+	      let linksArr = []
+	      for (let link in this.links) { linksArr.push(this.links[link]) }
+	      return linksArr
+	    })()
 
 	    this.go = function(destination) {
-	      $location.path(destinations[destination]);
+	      $location.path(links[destination]);
 	    }
 
 	    return this;
@@ -32214,6 +32228,8 @@
 	  // });
 
 	  __webpack_require__(10)(app);
+	  __webpack_require__(11)(app);
+
 	}
 
 
@@ -32231,6 +32247,21 @@
 	      controllerAs: 'navCtrl'
 	    }
 	  });
+	}
+
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+	module.exports = (app) => {
+	  app.directive('navButton', () => {
+	    return {
+	      restrict: 'E',
+	      replace: true,
+	      templateUrl: './directives/templates/nav-button.html'
+	    }
+	  })
 	}
 
 

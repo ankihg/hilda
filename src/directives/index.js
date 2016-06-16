@@ -4,4 +4,6 @@ module.exports = (app) => {
   // });
 
   require('./nav-menu-directive')(app);
+  require('./nav-button-directive')(app);
+
 }
