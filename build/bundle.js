@@ -32257,9 +32257,9 @@
 	  //   if (file !== 'index.js' && file !== 'templates') require(__dirname+'/'+file)(app);
 	  // });
 
-	  __webpack_require__(11)(app);
-	  __webpack_require__(12)(app);
-
+	  __webpack_require__(11)(app)
+	  __webpack_require__(12)(app)
+	  __webpack_require__(13)(app)
 	}
 
 
@@ -32292,6 +32292,21 @@
 	      templateUrl: './directives/templates/nav-button.html'
 	    }
 	  })
+	}
+
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	module.exports = (app) => {
+	  app.directive('sideBar', () => {
+	    return {
+	      restrict: 'E',
+	      repalce: true,
+	      templateUrl: './directives/templates/side-bar.html'
+	    }
+	  });
 	}
 
 
