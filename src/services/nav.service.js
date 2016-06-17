@@ -19,17 +19,17 @@ module.exports = (app) => {
 
     this.links = {
       home: new Link('home', '/'),
-      about: new Link('toys', '/toys'),
+      toys: new Link('toys', '/toys'),
     }
 
-    this.linksArr = (()=> {
+    this.linksArr = (() => {
       let linksArr = []
-      for (let link in this.links) { linksArr.push(this.links[link]) }
+      for (var link in this.links) { linksArr.push(this.links[link]) }
       return linksArr
     })()
 
     this.go = function(destination) {
-      $location.path(links[destination]);
+      $location.path(this.links[destination].path);
     }
 
     return this;

@@ -32185,17 +32185,17 @@
 
 	    this.links = {
 	      home: new Link('home', '/'),
-	      about: new Link('toys', '/toys'),
+	      toys: new Link('toys', '/toys'),
 	    }
 
-	    this.linksArr = (()=> {
+	    this.linksArr = (() => {
 	      let linksArr = []
-	      for (let link in this.links) { linksArr.push(this.links[link]) }
+	      for (var link in this.links) { linksArr.push(this.links[link]) }
 	      return linksArr
 	    })()
 
 	    this.go = function(destination) {
-	      $location.path(links[destination]);
+	      $location.path(this.links[destination].path);
 	    }
 
 	    return this;
@@ -32248,13 +32248,10 @@
 
 	module.exports = (app) => {
 	  app.controller('NavController', ['NavService', function(NavService) {
-	    console.log('hi from nav controller');
 
-	    var vm = this;
+	    var vm = this
 	    vm.NavService = NavService
-	    vm.plz = 'hi';
-
-	    return vm;
+	    return vm
 
 	  }])
 	}
@@ -32285,11 +32282,9 @@
 	module.exports = (app) => {
 	  app.controller('ToysController', ['ToyService', function(ToyService) {
 
-	    var vm = this;
+	    var vm = this
 	    vm.ToyService = ToyService
-	    vm.plz = 'hi';
-
-	    return vm;
+	    return vm
 
 	  }])
 	}
@@ -32352,7 +32347,9 @@
 	    return {
 	      restrict: 'E',
 	      repalce: true,
-	      templateUrl: './directives/templates/side-bar.html'
+	      templateUrl: './directives/templates/side-bar.html',
+	      controller: 'NavController',
+	      controllerAs: 'navCtrl'
 	    }
 	  });
 	}
