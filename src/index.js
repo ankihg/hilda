@@ -14,4 +14,9 @@ app.config(['$routeProvider', function(router) {
       controllerAs: 'homeCtrl',
       templateUrl: './views/home.html'
     })
+    .when('/toys', {
+      controller: 'ToysController',
+      controllerAs: 'toysCtrl',
+      templateUrl: './views/toys.html'
+    })
 }])

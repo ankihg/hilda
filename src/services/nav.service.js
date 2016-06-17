@@ -19,7 +19,7 @@ module.exports = (app) => {
 
     this.links = {
       home: new Link('home', '/'),
-      about: new Link('about', '/about'),
+      about: new Link('toys', '/toys'),
     }
 
     this.linksArr = (()=> {

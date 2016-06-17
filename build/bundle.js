@@ -50,8 +50,8 @@
 
 	const app = angular.module('HildaApp', ['ngRoute']);
 	__webpack_require__(5)(app);
-	__webpack_require__(7)(app);
-	__webpack_require__(10)(app);
+	__webpack_require__(8)(app);
+	__webpack_require__(12)(app);
 
 	app.config(['$routeProvider', function(router) {
 	  router
@@ -59,6 +59,11 @@
 	      controller: 'HomeController',
 	      controllerAs: 'homeCtrl',
 	      templateUrl: './views/home.html'
+	    })
+	    .when('/toys', {
+	      controller: 'ToysController',
+	      controllerAs: 'toysCtrl',
+	      templateUrl: './views/toys.html'
 	    })
 	}])
 
@@ -32150,7 +32155,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = (app) => {
-	  __webpack_require__(6)(app);
+	  __webpack_require__(6)(app)
+	  __webpack_require__(7)(app)
 	}
 
 
@@ -32179,7 +32185,7 @@
 
 	    this.links = {
 	      home: new Link('home', '/'),
-	      about: new Link('about', '/about'),
+	      about: new Link('toys', '/toys'),
 	    }
 
 	    this.linksArr = (()=> {
@@ -32203,17 +32209,41 @@
 
 /***/ },
 /* 7 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
+	'use strict';
 	module.exports = (app) => {
-	  console.log('hi from controllers index');
-	  __webpack_require__(8)(app);
-	  __webpack_require__(9)(app);
+	  app.factory('ToyService', ['$http', function($http) {
+
+	    var path = '/toys'
+	    this.toys = null
+
+	    this.retrieve = function(next) {
+	      $http.get(path)
+	        .then(res => {
+	          this.toys = res.data.data;
+	        })
+	        .catch(err => console.log(err))
+	    }
+
+	    return this;
+	  }])
 	}
 
 
 /***/ },
 /* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = (app) => {
+	  __webpack_require__(9)(app)
+	  __webpack_require__(10)(app)
+	  __webpack_require__(11)(app)
+	}
+
+
+/***/ },
+/* 9 */
 /***/ function(module, exports) {
 
 	module.exports = (app) => {
@@ -32231,7 +32261,7 @@
 
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports) {
 
 	module.exports = (app) => {
@@ -32249,22 +32279,40 @@
 
 
 /***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
+/* 11 */
+/***/ function(module, exports) {
 
 	module.exports = (app) => {
-	  // require('fs').readdirSync('./directives').forEach((file) => {
-	  //   if (file !== 'index.js' && file !== 'templates') require(__dirname+'/'+file)(app);
-	  // });
+	  app.controller('ToysController', ['ToyService', function(ToyService) {
 
-	  __webpack_require__(11)(app)
-	  __webpack_require__(12)(app)
-	  __webpack_require__(13)(app)
+	    var vm = this;
+	    vm.ToyService = ToyService
+	    vm.plz = 'hi';
+
+	    return vm;
+
+	  }])
 	}
 
 
 /***/ },
-/* 11 */
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = (app) => {
+	  // require('fs').readdirSync('./directives').forEach((file) => {
+	  //   if (file !== 'index.js' && file !== 'templates') require('./'+file)(app);
+	  // });
+
+	  __webpack_require__(13)(app)
+	  __webpack_require__(14)(app)
+	  __webpack_require__(15)(app)
+	  __webpack_require__(16)(app)  
+	}
+
+
+/***/ },
+/* 13 */
 /***/ function(module, exports) {
 
 	module.exports = (app) => {
@@ -32281,7 +32329,7 @@
 
 
 /***/ },
-/* 12 */
+/* 14 */
 /***/ function(module, exports) {
 
 	module.exports = (app) => {
@@ -32296,7 +32344,7 @@
 
 
 /***/ },
-/* 13 */
+/* 15 */
 /***/ function(module, exports) {
 
 	module.exports = (app) => {
@@ -32305,6 +32353,21 @@
 	      restrict: 'E',
 	      repalce: true,
 	      templateUrl: './directives/templates/side-bar.html'
+	    }
+	  });
+	}
+
+
+/***/ },
+/* 16 */
+/***/ function(module, exports) {
+
+	module.exports = (app) => {
+	  app.directive('toy', () => {
+	    return {
+	      restrict: 'E',
+	      repalce: true,
+	      templateUrl: './directives/templates/toy.html'
 	    }
 	  });
 	}

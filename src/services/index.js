@@ -1,3 +1,4 @@
 module.exports = (app) => {
-  require(__dirname+'/nav-service.js')(app);
+  require('./nav.service.js')(app)
+  require('./toy.service.js')(app)
 }

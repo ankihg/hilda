@@ -1,5 +1,5 @@
 module.exports = (app) => {
-  console.log('hi from controllers index');
-  require(__dirname+'/nav-controller.js')(app);
-  require(__dirname+'/home-controller.js')(app);
+  require('./nav.controller.js')(app)
+  require('./home.controller.js')(app)
+  require('./toys.controller.js')(app)
 }
