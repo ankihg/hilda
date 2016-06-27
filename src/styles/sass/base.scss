@@ -1,8 +1,7 @@
-$colr: #05F5DD;
-$borderColr: #ED32D7;
+@import 'colors';
 
 body {
-  color: $colr;
+  color: $color;
   background-image: url('../assets/starry-sky.png')
 }
 
@@ -11,7 +10,12 @@ main {
 }
 
 section {
-  border: solid $borderColr;
+  border: solid $borderColor;
   background-color: rgba(255, 255, 255, .5);
   margin-top: 2%;
+}
+
+
+.nav-button {
+  border: solid $borderColor;
 }

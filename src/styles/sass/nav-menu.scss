@@ -1,3 +1,5 @@
+@import 'colors';
+
 #nav-menu {
   position: relative;
   margin: 0% auto;
@@ -9,4 +11,9 @@
   background-property: contain;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+
+.nav-button {
+  border: solid $borderColor;
+  position: absolute;
 }

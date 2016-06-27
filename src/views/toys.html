@@ -1,7 +1,9 @@
-<section data-ng-init="toysCtrl.ToyService.retrieve()">
+<section class="seven columns offset-by-one" data-ng-init="toysCtrl.ToyService.retrieve()">
   look at my toys !!
   <div data-ng-repeat="toy in toysCtrl.ToyService.toys">
     <toy toy="{{toy}}"/>
   </div>
 
 </section>
+
+<side-bar></side-bar>

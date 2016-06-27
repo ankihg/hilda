@@ -10,4 +10,8 @@
   background-repeat: no-repeat;
   background-size: 100% 100%; }
 
+.nav-button {
+  border: solid #ED32D7;
+  position: absolute; }
+
 /*# sourceMappingURL=nav-menu.css.map */

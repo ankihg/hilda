@@ -32175,17 +32175,19 @@
 
 	    this.plz = "h i l d a";
 
-	    var Link = function(name, path) {
+	    var Link = function(name, path, pos) {
 	      this.name = name;
 	      this.path = path;
+	      this.pos = pos;
 	    }
 	    Link.prototype.go = function() {
 	      $location.path(this.path);
 	    }
 
 	    this.links = {
-	      home: new Link('home', '/'),
-	      toys: new Link('toys', '/toys'),
+	      home: new Link('home', '/', {x: 8, y: 20}),
+	      toys: new Link('toys', '/toys', {x: 12, y: 40}),
+	      bio: new Link('bio', '/bio', {x: 8, y: 60})
 	    }
 
 	    this.linksArr = (() => {
@@ -32251,6 +32253,14 @@
 
 	    var vm = this
 	    vm.NavService = NavService
+
+	    vm.linkPos = [
+	      {x: 5, y: 5},
+	      {x: 10, y: 10}
+	    ]
+
+
+
 	    return vm
 
 	  }])
