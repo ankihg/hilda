@@ -33,4 +33,12 @@
   display: inline;
   max-width: 100%; }
 
+#bio .welcome {
+  text-align: center;
+  font-size: 250%;
+  padding-top: 5%; }
+#bio img {
+  display: inline;
+  max-width: 100%; }
+
 /*# sourceMappingURL=modules.css.map */

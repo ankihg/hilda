@@ -19,4 +19,7 @@ app.config(['$routeProvider', function(router) {
       controllerAs: 'toysCtrl',
       templateUrl: './views/toys.html'
     })
+    .when('/bio', {
+      templateUrl: './views/bio.html'
+    })
 }])

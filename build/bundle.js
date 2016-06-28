@@ -65,6 +65,9 @@
 	      controllerAs: 'toysCtrl',
 	      templateUrl: './views/toys.html'
 	    })
+	    .when('/bio', {
+	      templateUrl: './views/bio.html'
+	    })
 	}])
 
 
