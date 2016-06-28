@@ -20,4 +20,9 @@
 #side-bar section {
   margin-bottom: 2%; }
 
+.toy {
+  text-align: center; }
+  .toy img {
+    width: 50%; }
+
 /*# sourceMappingURL=modules.css.map */
