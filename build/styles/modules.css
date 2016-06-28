@@ -25,4 +25,12 @@
   .toy img {
     width: 50%; }
 
+#home .welcome {
+  text-align: center;
+  font-size: 250%;
+  padding-top: 5%; }
+#home img {
+  display: inline;
+  max-width: 100%; }
+
 /*# sourceMappingURL=modules.css.map */
