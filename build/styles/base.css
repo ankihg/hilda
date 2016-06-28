@@ -8,9 +8,6 @@ main {
 section {
   border: solid #ED32D7;
   background-color: rgba(255, 255, 255, 0.5);
-  margin-top: 2%; }
-
-.nav-button {
-  border: solid #ED32D7; }
+  margin-bottom: 2%; }
 
 /*# sourceMappingURL=base.css.map */
