@@ -1,8 +1,11 @@
 'use strict';
 const angular = require('angular');
 require('angular-route');
+require('lodash')
+require('angular-simple-logger')
+require('angular-google-maps')
 
-const app = angular.module('HildaApp', ['ngRoute']);
+const app = angular.module('HildaApp', ['ngRoute', 'uiGmapgoogle-maps']);
 require('./services')(app);
 require('./controllers')(app);
 require('./directives')(app);
@@ -21,5 +24,10 @@ app.config(['$routeProvider', function(router) {
     })
     .when('/bio', {
       templateUrl: './views/bio.html'
+    })
+    .when('/squirrel-report', {
+      controller: 'SquirrelReportController',
+      controllerAs: 'sqCtrl',
+      templateUrl: './views/squirrel-report.html'
     })
 }])
