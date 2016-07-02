@@ -3,9 +3,6 @@ module.exports = (app) => {
 
     var vm = this
     vm.reporter = SquirrelReporter
-    vm.reporter.retrieveSightings(function(sightings) {
-      console.log(sightings);
-    });
 
 
 

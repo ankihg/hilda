@@ -1,5 +1,11 @@
-<section class="twelve columns ">
+<section class="twelve columns" data-ng-init="sqCtrl.reporter.retrieveSightings()">
 
-  <ui-gmap-google-map id="squirrel-map" center="sqCtrl.map.center" zoom="sqCtrl.map.zoom" options="sqCtrl.map.options"><ui-gmap-google-map>
+  <ui-gmap-google-map id="squirrel-map" center="sqCtrl.map.center" zoom="sqCtrl.map.zoom" options="sqCtrl.map.options">
+
+    <ui-gmap-marker data-ng-repeat="sighting in sqCtrl.reporter.sightings" coords="{latitude:sighting.loc[1], longitude:sighting.loc[0]}" idKey="sighting.date">
+
+    </ui-gmap-marker>
+
+  <ui-gmap-google-map>
 
 </section>

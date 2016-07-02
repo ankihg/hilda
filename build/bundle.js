@@ -65040,9 +65040,9 @@
 	    this.retrieveSightings = function(next) {
 	      $http.get(path)
 	        .then(res => {
-	          console.log(res.data);
+	          console.log(res.data.data);
 	          this.sightings = res.data.data;
-	          next(this.sightings);
+	          next && next(this.sightings);
 	        })
 	        .catch(err => {
 	          console.log(err);
@@ -65131,9 +65131,6 @@
 
 	    var vm = this
 	    vm.reporter = SquirrelReporter
-	    vm.reporter.retrieveSightings(function(sightings) {
-	      console.log(sightings);
-	    });
 
 
 
