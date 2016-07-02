@@ -63438,7 +63438,11 @@
 
 	    var vm = this
 
-	    vm.map = { center: {latitude: 47.668313, longitude: -122.311065}, zoom: 8}
+	    vm.map = {
+	      center: {latitude: 47.668313, longitude: -122.311065},
+	      zoom: 12,
+	      options: {mapTypeId: google.maps.MapTypeId.SATELLITE }
+	    }
 
 	    return vm
 
