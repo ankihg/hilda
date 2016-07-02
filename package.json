@@ -23,6 +23,8 @@
     "mongoose": "^4.4.19"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
     "gulp": "^3.9.1",
     "morgan": "^1.7.0",
     "webpack": "^1.13.1",
