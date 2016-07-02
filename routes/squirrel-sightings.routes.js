@@ -2,7 +2,7 @@
 module.exports = (router, models) => {
 
   const Resource = models.SquirrelSighting;
-  const resource = 'squirrel-sighting';
+  const resource = 'squirrel-sightings';
 
   router.route('/'+resource)
     .get((req, res) => {

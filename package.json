@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/ankihg/hilda#readme",
   "dependencies": {
-    "angular-google-maps": "^2.3.3",
+    "angular-google-maps": "^2.3.2",
     "angular-simple-logger": "^0.1.7",
     "body-parser": "^1.15.1",
     "express": "^4.13.4",

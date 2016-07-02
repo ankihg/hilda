@@ -4,7 +4,7 @@ const {expect, request} = require('chai').use(require('chai-http')),
 
 describe('squirrel-sighting routes testing', () => {
 
-  const path = '/squirrel-sighting';
+  const path = '/squirrel-sightings';
   let squirrelId = '';
 
   before((done) => {
