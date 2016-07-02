@@ -42,6 +42,9 @@
   max-width: 100%; }
 
 #squirrel-map {
-  height: 600px; }
+  padding: 1%; }
+
+.angular-google-map-container {
+  height: 400px; }
 
 /*# sourceMappingURL=modules.css.map */
