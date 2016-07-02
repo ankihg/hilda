@@ -32190,7 +32190,10 @@
 	    this.links = {
 	      home: new Link('home', '/', {x: 8, y: 20}),
 	      toys: new Link('toys', '/toys', {x: 12, y: 40}),
-	      bio: new Link('bio', '/bio', {x: 8, y: 60})
+	      bio: new Link('bio', '/bio', {x: 8, y: 60}),
+	      flickr: new Link('flickr', '/flickr', {x: 86, y: 20}),
+	      squirrels: new Link('squirrels', '/squirrel_report', {x: 82, y: 40}),
+	      plz: new Link('plz', '/plz', {x: 86, y: 60})
 	    }
 
 	    this.linksArr = (() => {
