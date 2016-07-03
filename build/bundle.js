@@ -65170,7 +65170,9 @@
 	  __webpack_require__(22)(app)
 	  __webpack_require__(23)(app)
 	  __webpack_require__(24)(app)
-	  __webpack_require__(25)(app)  
+	  __webpack_require__(25)(app)
+	  __webpack_require__(26)(app)
+
 	}
 
 
@@ -65233,6 +65235,23 @@
 	      restrict: 'E',
 	      repalce: true,
 	      templateUrl: './directives/templates/toy.html'
+	    }
+	  });
+	}
+
+
+/***/ },
+/* 26 */
+/***/ function(module, exports) {
+
+	module.exports = (app) => {
+	  app.directive('reportASquirrel', () => {
+	    return {
+	      restrict: 'E',
+	      repalce: true,
+	      templateUrl: './directives/templates/report-a-squirrel.html',
+	      controller: 'SquirrelReportController',
+	      controllerAs: 'sqCtrl'
 	    }
 	  });
 	}
