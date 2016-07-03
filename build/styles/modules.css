@@ -42,7 +42,8 @@
   max-width: 100%; }
 
 #squirrel-map {
-  margin: 1% 10% 1% 10%; }
+  margin: 1% 10% 1% 10%;
+  color: black; }
 
 .angular-google-map-container {
   height: 700px;

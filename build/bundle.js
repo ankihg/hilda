@@ -65140,6 +65140,18 @@
 	      options: {mapTypeId: google.maps.MapTypeId.SATELLITE }
 	    }
 
+	    vm.infowindowConfig = {
+	      selected: null,
+	      onClick(sightingId) {
+	        // this.options.visible = !this.options.visible;
+	        this.selected = sightingId;
+	      },
+	      clockClick() {
+	        // this.options.visible = false;
+	        this.selected = null;
+	      }
+	    }
+
 	    return vm
 
 	  }])
