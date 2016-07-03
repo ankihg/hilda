@@ -5,6 +5,15 @@ module.exports = (app) => {
     var path = '/squirrel-sightings'
     this.sightings = null;
 
+    this.mapClickCoords = {
+      latitude: 5,
+      longitude: 5
+    }
+
+    this.newSighting = {
+      loc: this.mapClickCoords
+    }
+
     this.retrieveSightings = function(next) {
       $http.get(path)
         .then(res => {

@@ -8,3 +8,15 @@
   width: 90%;
   margin: auto;
 }
+
+.report-a-squirrel {
+  background-color: $color;
+  margin: 2%;
+  padding: 2%;
+  border: solid $borderColor;
+
+  input {
+    width: 50%;
+  }
+
+}

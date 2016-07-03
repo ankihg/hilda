@@ -1,6 +1,6 @@
 <section class="ten columns offset-by-one" data-ng-init="sqCtrl.reporter.retrieveSightings()">
 
-  <ui-gmap-google-map id="squirrel-map" center="sqCtrl.map.center" zoom="sqCtrl.map.zoom" options="sqCtrl.map.options">
+  <ui-gmap-google-map id="squirrel-map" center="sqCtrl.map.center" zoom="sqCtrl.map.zoom" options="sqCtrl.map.options" events="sqCtrl.map.events">
 
     <ui-gmap-marker data-ng-repeat="sighting in sqCtrl.reporter.sightings"
         coords="{latitude:sighting.loc[1], longitude:sighting.loc[0]}"
@@ -12,19 +12,17 @@
           coords="{latitude:sighting.loc[1], longitude:sighting.loc[0]}"
           show="sqCtrl.infowindowConfig.selected === sighting._id"
           closeClick="sqCtrl.infowindowConfig.closeClick()">
-          <div>
-            <h3>squirrel sighting !!</h3>
-            reporter: {{sighting.reporter}} <br/>
-            coordinates: {{sighting.loc[1]}}, {{sighting.loc[0]}} </br>
-            date: {{sighting.date | date:'medium'}}
-          </div>
+        <div>
+          <h3>squirrel sighting !!</h3>
+          reporter: {{sighting.reporter}} <br/>
+          coordinates: {{sighting.loc[1]}}, {{sighting.loc[0]}} </br>
+          date: {{sighting.date | date:'medium'}}
+        </div>
       </ui-gmap-window>
 
-      <ui-gmap-map-control template="views/report-a-squirrel.html" position="top-right">
-
-      </ui-gmap-map-control>
-
     </ui-gmap-marker>
+
+    <ui-gmap-map-control template="views/report-a-squirrel.html" index="-1" position="top-right"></ui-gmap-map-control>
 
   <ui-gmap-google-map>
 

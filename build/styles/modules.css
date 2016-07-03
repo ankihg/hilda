@@ -50,4 +50,12 @@
   width: 90%;
   margin: auto; }
 
+.report-a-squirrel {
+  background-color: #05F5DD;
+  margin: 2%;
+  padding: 2%;
+  border: solid #ED32D7; }
+  .report-a-squirrel input {
+    width: 50%; }
+
 /*# sourceMappingURL=modules.css.map */
