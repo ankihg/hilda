@@ -34,6 +34,10 @@
 #home img {
   display: inline;
   max-width: 100%; }
+#home hr {
+  border-color: #AF08CC;
+  background-color: #AF08CC;
+  height: 1px; }
 
 #bio .welcome {
   text-align: center;
