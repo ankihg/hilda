@@ -1,9 +1,10 @@
 <div class="report-a-squirrel">
   <h3>report a squirrel</h3>
   plz {{sqCtrl.plz}}
-  <form>
-    your name: <input data-ng-model="sqCtrl.reporter.newSighting.reporter"></input><br/>
-    lat: <input data-ng-model="sqCtrl.reporter.newSighting.loc.latitude" data-ng-value="sqCtrl.reporter.newSighting.loc.latitude"></input><br/>
-    lng: <input data-ng-model="sqCtrl.reporter.newSighting.loc.longitude" data-ng-value="sqCtrl.reporter.newSighting.loc.longitude"></input>
+  <form data-ng-submit="sqCtrl.reporter.reportSighting()">
+    <input data-ng-model="sqCtrl.reporter.newSighting.reporter" placeholder="your name"></input><br/>
+    <input data-ng-model="sqCtrl.reporter.newSighting.loc.latitude" data-ng-value="sqCtrl.reporter.newSighting.loc.latitude" placeholder="lat"></input><br/>
+    <input data-ng-model="sqCtrl.reporter.newSighting.loc.longitude" data-ng-value="sqCtrl.reporter.newSighting.loc.longitude" placeholder="lng"></input>
+    <input type="submit" value="report"></input>
   </form>
 </div>
