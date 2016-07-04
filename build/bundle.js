@@ -65038,8 +65038,8 @@
 	    this.sightings = null;
 
 	    this.mapClickCoords = {
-	      latitude: 5,
-	      longitude: 5
+	      latitude: null,
+	      longitude: null
 	    }
 
 	    this.newSighting = {
@@ -65052,6 +65052,19 @@
 	          console.log(res.data.data);
 	          this.sightings = res.data.data;
 	          next && next(this.sightings);
+	        })
+	        .catch(err => {
+	          console.log(err);
+	        })
+	    }
+
+	    this.reportSighting = function(sighting, next) {
+	      $http.post(path)
+	        .send(sighting)
+	        .then(res => {
+	          console.log(res.data.data);
+	          this.sightings.push(res.data.data);
+	          next && next(res.data.data);
 	        })
 	        .catch(err => {
 	          console.log(err);
@@ -65146,7 +65159,10 @@
 	    vm.map = {
 	      center: {latitude: 47.668313, longitude: -122.311065},
 	      zoom: 12,
-	      options: {mapTypeId: google.maps.MapTypeId.SATELLITE },
+	      options: {
+	        mapTypeId: google.maps.MapTypeId.SATELLITE,
+	        disableDoubleClickZoom: true
+	      },
 	      events: {
 	        click: function(mapModel, eventName, originalEventArgs) {
 	          var e = originalEventArgs[0];

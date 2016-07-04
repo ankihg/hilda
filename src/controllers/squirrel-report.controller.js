@@ -9,7 +9,10 @@ module.exports = (app) => {
     vm.map = {
       center: {latitude: 47.668313, longitude: -122.311065},
       zoom: 12,
-      options: {mapTypeId: google.maps.MapTypeId.SATELLITE },
+      options: {
+        mapTypeId: google.maps.MapTypeId.SATELLITE,
+        disableDoubleClickZoom: true
+      },
       events: {
         click: function(mapModel, eventName, originalEventArgs) {
           var e = originalEventArgs[0];

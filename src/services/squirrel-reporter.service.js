@@ -6,8 +6,8 @@ module.exports = (app) => {
     this.sightings = null;
 
     this.mapClickCoords = {
-      latitude: 5,
-      longitude: 5
+      latitude: null,
+      longitude: null
     }
 
     this.newSighting = {
@@ -20,6 +20,19 @@ module.exports = (app) => {
           console.log(res.data.data);
           this.sightings = res.data.data;
           next && next(this.sightings);
+        })
+        .catch(err => {
+          console.log(err);
+        })
+    }
+
+    this.reportSighting = function(sighting, next) {
+      $http.post(path)
+        .send(sighting)
+        .then(res => {
+          console.log(res.data.data);
+          this.sightings.push(res.data.data);
+          next && next(res.data.data);
         })
         .catch(err => {
           console.log(err);
