@@ -17,8 +17,10 @@
   font-size: 125%;
   padding: 0 1% 0 1%; }
 
-#side-bar section {
-  margin-bottom: 2%; }
+#side-bar img {
+  width: 20%;
+  margin: 3%;
+  display: inline; }
 
 .toy {
   text-align: center; }
