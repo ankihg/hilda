@@ -1,10 +1,10 @@
 <div class="report-a-squirrel">
-  <h3>report a squirrel</h3>
-  plz {{sqCtrl.plz}}
+  <h3>report a squirrel !!</h3>
   <form data-ng-submit="sqCtrl.reporter.reportSighting()">
-    <input data-ng-model="sqCtrl.reporter.newSighting.reporter" placeholder="your name"></input><br/>
-    <input data-ng-model="sqCtrl.reporter.newSighting.loc.latitude" data-ng-value="sqCtrl.reporter.newSighting.loc.latitude" placeholder="lat"></input><br/>
-    <input data-ng-model="sqCtrl.reporter.newSighting.loc.longitude" data-ng-value="sqCtrl.reporter.newSighting.loc.longitude" placeholder="lng"></input>
+    <input data-ng-model="sqCtrl.reporter.newSighting.loc.latitude" data-ng-value="sqCtrl.reporter.newSighting.loc.latitude" placeholder="lat"></input>
+    <input data-ng-model="sqCtrl.reporter.newSighting.loc.longitude" data-ng-value="sqCtrl.reporter.newSighting.loc.longitude" placeholder="lng"></input><br/>
+    <img src="/assets/squirrel.png"></img>
+    <input data-ng-model="sqCtrl.reporter.newSighting.reporter" placeholder="your name"></input>
     <input type="submit" value="report"></input>
   </form>
 </div>

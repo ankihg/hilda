@@ -15,8 +15,21 @@
   padding: 2%;
   border: solid $borderColor;
 
+
   input {
-    width: 50%;
+    width: 40%;
+  }
+
+  img {
+    display: inline;
+    // float: right;
+    width: 10%;
+    margin-right: 5%;
+    margin-top: 1%;
+  }
+
+  h3 {
+    text-align: center;
   }
 
 }

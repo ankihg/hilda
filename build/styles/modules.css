@@ -56,6 +56,13 @@
   padding: 2%;
   border: solid #ED32D7; }
   .report-a-squirrel input {
-    width: 50%; }
+    width: 40%; }
+  .report-a-squirrel img {
+    display: inline;
+    width: 10%;
+    margin-right: 5%;
+    margin-top: 1%; }
+  .report-a-squirrel h3 {
+    text-align: center; }
 
 /*# sourceMappingURL=modules.css.map */
