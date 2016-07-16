@@ -55,6 +55,7 @@
 	__webpack_require__(12)(app);
 	__webpack_require__(16)(app);
 	__webpack_require__(21)(app);
+	// require('./directives')(app);
 
 	app.config(['$routeProvider', function(router) {
 	  router
@@ -65196,34 +65197,30 @@
 /* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = (app) => {
-	  // require('fs').readdirSync('./directives').forEach((file) => {
-	  //   if (file !== 'index.js' && file !== 'templates') require('./'+file)(app);
-	  // });
-
-	  __webpack_require__(22)(app)
-	  __webpack_require__(23)(app)
-	  __webpack_require__(24)(app)
-	  __webpack_require__(25)(app)
-	  __webpack_require__(26)(app)
-
+	module.exports = function(app) {
+	  __webpack_require__(22)(app);
+	  __webpack_require__(24)(app);
 	}
 
 
 /***/ },
 /* 22 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = (app) => {
-	  app.directive('navMenu', () => {
-	    return {
-	      restrict: 'E',
-	      replace: true,
-	      templateUrl: './directives/templates/nav-menu.html',
-	      controller: 'NavController',
-	      controllerAs: 'navCtrl'
-	    }
-	  });
+	module.exports = function(app) {
+
+	  __webpack_require__(23)(app);
+
+	  app.component('navMenu', {
+	    templateUrl: './components/nav-menu/template.html',
+	    controller:  ['NavService', function(NavService) {
+
+	      var vm = this
+	      vm.NavService = NavService
+	      return vm
+
+	    }]
+	  })
 	}
 
 
@@ -65231,12 +65228,11 @@
 /* 23 */
 /***/ function(module, exports) {
 
-	module.exports = (app) => {
-	  app.directive('navButton', () => {
-	    return {
-	      restrict: 'E',
-	      replace: true,
-	      templateUrl: './directives/templates/nav-button.html'
+	module.exports = function(app) {
+	  app.component('navButton', {
+	    templateUrl: './components/nav-menu/nav-button/template.html',
+	    bindings: {
+	      link: '='
 	    }
 	  })
 	}
@@ -65246,60 +65242,50 @@
 /* 24 */
 /***/ function(module, exports) {
 
-	module.exports = (app) => {
-	  app.directive('sideBar', () => {
-	    return {
-	      restrict: 'E',
-	      repalce: true,
-	      templateUrl: './directives/templates/side-bar/index.html',
-	      controller: 'NavController',
-	      controllerAs: 'navCtrl'
-	    }
-	  });
+	module.exports = function(app) {
 
-	  app.directive('toysAd', () => {
-	    return {
-	      restrict: 'E',
-	      replace: true,
-	      templateUrl: './directives/templates/side-bar/toys-ad.html',
-	      controller: 'ToysController',
-	      controllerAs: 'toysCtrl'
-	    }
+	  app.component('reportASquirrel', {
+	    templateUrl: './components/report-a-squirrel/template.html',
+	    controllerAs: 'sqCtrl',
+	    controller:  ['SquirrelReporter', function(SquirrelReporter) {
+
+	      var vm = this
+	      vm.reporter = SquirrelReporter
+
+	      vm.plz = "respond"
+
+	      vm.map = {
+	        center: {latitude: 47.668313, longitude: -122.311065},
+	        zoom: 12,
+	        options: {
+	          mapTypeId: google.maps.MapTypeId.SATELLITE,
+	          disableDoubleClickZoom: true
+	        },
+	        events: {
+	          click: function(mapModel, eventName, originalEventArgs) {
+	            var e = originalEventArgs[0];
+	            vm.reporter.mapClickCoords.latitude = e.latLng.lat();
+	            vm.reporter.mapClickCoords.longitude = e.latLng.lng();
+	          }
+	        }
+	      }
+
+	      vm.infowindowConfig = {
+	        selected: null,
+	        onClick(sightingId) {
+	          // this.options.visible = !this.options.visible;
+	          this.selected = sightingId;
+	        },
+	        clockClick() {
+	          // this.options.visible = false;
+	          this.selected = null;
+	        }
+	      }
+
+	      return vm
+
+	    }]
 	  })
-
-
-	}
-
-
-/***/ },
-/* 25 */
-/***/ function(module, exports) {
-
-	module.exports = (app) => {
-	  app.directive('toy', () => {
-	    return {
-	      restrict: 'E',
-	      repalce: true,
-	      templateUrl: './directives/templates/toy.html'
-	    }
-	  });
-	}
-
-
-/***/ },
-/* 26 */
-/***/ function(module, exports) {
-
-	module.exports = (app) => {
-	  app.directive('reportASquirrel', () => {
-	    return {
-	      restrict: 'E',
-	      repalce: true,
-	      templateUrl: './directives/templates/report-a-squirrel.html',
-	      controller: 'SquirrelReportController',
-	      controllerAs: 'sqCtrl'
-	    }
-	  });
 	}
 
 

@@ -8,7 +8,8 @@ require('angular-google-maps')
 const app = angular.module('HildaApp', ['ngRoute', 'uiGmapgoogle-maps']);
 require('./services')(app);
 require('./controllers')(app);
-require('./directives')(app);
+require('./components')(app);
+// require('./directives')(app);
 
 app.config(['$routeProvider', function(router) {
   router
