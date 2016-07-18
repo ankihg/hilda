@@ -65201,6 +65201,7 @@
 	  __webpack_require__(22)(app);
 	  __webpack_require__(24)(app);
 	  __webpack_require__(25)(app);
+	  __webpack_require__(26)(app);
 	}
 
 
@@ -65301,6 +65302,38 @@
 	    bindings: {
 	      toy: '='
 	    }
+	  })
+	}
+
+
+/***/ },
+/* 26 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(app) {
+
+	  __webpack_require__(27)(app);
+
+	  app.component('sideBar', {
+	    templateUrl: './components/side-bar/template.html',
+	    controller: ['$scope', 'NavService', function($scope, NavService) {
+	      $scope.NavService = NavService;
+	    }]
+	  })
+	}
+
+
+/***/ },
+/* 27 */
+/***/ function(module, exports) {
+
+	module.exports = function(app) {
+
+	  app.component('toysAd', {
+	    templateUrl: './components/side-bar/toys-ad/template.html',
+	    controller: ['$scope', 'ToyService', function($scope, ToyService) {
+	      $scope.ToyService = ToyService;
+	    }]
 	  })
 	}
 
