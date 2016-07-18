@@ -65200,6 +65200,7 @@
 	module.exports = function(app) {
 	  __webpack_require__(22)(app);
 	  __webpack_require__(24)(app);
+	  __webpack_require__(25)(app);
 	}
 
 
@@ -65285,6 +65286,21 @@
 	      return vm
 
 	    }]
+	  })
+	}
+
+
+/***/ },
+/* 25 */
+/***/ function(module, exports) {
+
+	module.exports = function(app) {
+
+	  app.component('toy', {
+	    templateUrl: './components/toy/template.html',
+	    bindings: {
+	      toy: '='
+	    }
 	  })
 	}
 
