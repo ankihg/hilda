@@ -65168,9 +65168,11 @@
 	      },
 	      events: {
 	        click: function(mapModel, eventName, originalEventArgs) {
+	          console.log('clicked');
 	          var e = originalEventArgs[0];
 	          vm.reporter.mapClickCoords.latitude = e.latLng.lat();
 	          vm.reporter.mapClickCoords.longitude = e.latLng.lng();
+	          google.maps.event.trigger(mapModel, 'dragend');
 	        }
 	      }
 	    }
