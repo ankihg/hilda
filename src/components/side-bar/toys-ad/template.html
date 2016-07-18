@@ -1,0 +1,7 @@
+<div data-ng-init="ToyService.retrieve()">
+  meet my toys !!
+  </br>
+  <span data-ng-repeat="toy in ToyService.toys.slice(0, 3)">
+    <img src="{{toy.imgSrc}}"></img>
+  </span>
+</div>
