@@ -65315,6 +65315,7 @@
 	module.exports = function(app) {
 
 	  __webpack_require__(27)(app);
+	  __webpack_require__(28)(app);
 
 	  app.component('sideBar', {
 	    templateUrl: './components/side-bar/template.html',
@@ -65335,6 +65336,21 @@
 	    templateUrl: './components/side-bar/toys-ad/template.html',
 	    controller: ['$scope', 'ToyService', function($scope, ToyService) {
 	      $scope.ToyService = ToyService;
+	    }]
+	  })
+	}
+
+
+/***/ },
+/* 28 */
+/***/ function(module, exports) {
+
+	module.exports = function(app) {
+
+	  app.component('squirrelfeed', {
+	    templateUrl: './components/side-bar/squirrelfeed/template.html',
+	    controller: ['$scope', 'SquirrelReporter', function($scope, SquirrelReporter) {
+	      $scope.SquirrelReporter = SquirrelReporter;
 	    }]
 	  })
 	}
