@@ -65343,15 +65343,32 @@
 
 /***/ },
 /* 28 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(app) {
+
+	  __webpack_require__(29)(app);
 
 	  app.component('squirrelfeed', {
 	    templateUrl: './components/side-bar/squirrelfeed/template.html',
 	    controller: ['$scope', 'SquirrelReporter', function($scope, SquirrelReporter) {
 	      $scope.SquirrelReporter = SquirrelReporter;
 	    }]
+	  })
+	}
+
+
+/***/ },
+/* 29 */
+/***/ function(module, exports) {
+
+	module.exports = function(app) {
+
+	  app.component('sighting', {
+	    templateUrl: './components/side-bar/squirrelfeed/sighting/template.html',
+	    bindings: {
+	      sighting: '='
+	    }
 	  })
 	}
 
