@@ -20,12 +20,12 @@ module.exports = (app) => {
     }
 
     this.links = {
-      home: new Link('home', '/', {x: 8, y: 20}),
-      toys: new Link('toys', '/toys', {x: 12, y: 40}),
-      bio: new Link('bio', '/bio', {x: 8, y: 60}),
-      flickr: new Link('flickr', 'https://www.flickr.com/photos/142887762@N06/', {x: 86, y: 20}, true),
-      squirrels: new Link('squirrels', '/squirrel-report', {x: 82, y: 40}),
-      plz: new Link('plz', '/plz', {x: 86, y: 60})
+      home: new Link('home', '/', {x: 8, y: 25}),
+      toys: new Link('toys', '/toys', {x: 12, y: 45}),
+      bio: new Link('bio', '/bio', {x: 8, y: 65}),
+      flickr: new Link('flickr', 'https://www.flickr.com/photos/142887762@N06/', {x: 86, y: 25}, true),
+      squirrels: new Link('squirrels', '/squirrel-report', {x: 82, y: 45}),
+      plz: new Link('plz', '/plz', {x: 86, y: 65})
     }
 
     this.linksArr = (() => {
