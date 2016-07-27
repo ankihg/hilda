@@ -41,8 +41,8 @@
 
 #bio .welcome {
   text-align: center;
-  font-size: 250%;
-  padding-top: 5%; }
+  font-size: 150%;
+  padding: 2%; }
 #bio img {
   display: inline;
   max-width: 100%; }
