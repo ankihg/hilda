@@ -2,9 +2,9 @@
 module.exports = (mongoose, models) => {
 
   const treeSchema = new mongoose.Schema({
-    id: String,
+    cityID: String,
     imgSrc: String
   });
 
-  models.Toy = mongoose.model('Toy', toySchema);
+  models.Tree = mongoose.model('Tree', treeSchema);
 }
