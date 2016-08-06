@@ -14,13 +14,13 @@ module.exports = (router, models) => {
           Promise.all(data.map((d) => {
             return new Promise((resolve, reject) => {
               http.get(config.TRUNKS_OF_SEATTLE+'/trees/id/'+d.cityID, resp => {
-                  var body = '';
+                let body = '';
                  resp.on('data', function(chunk) {
                    body += chunk;
                  });
                  resp.on('end', function() {
-                   console.log(body);
-                   resolve(body)
+                   body = JSON.parse(body);
+                   resolve({search: d, tree: body.data.tree[0]});
                  });
               })
             })}))

@@ -9,6 +9,7 @@ module.exports = (app) => {
       $http.get(path)
         .then(res => {
           this.trees = res.data.data;
+          console.log(this.trees);
         })
         .catch(err => console.log(err))
     }

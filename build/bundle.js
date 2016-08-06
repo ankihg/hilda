@@ -53,8 +53,8 @@
 
 	const app = angular.module('HildaApp', ['ngRoute', 'uiGmapgoogle-maps']);
 	__webpack_require__(12)(app);
-	__webpack_require__(16)(app);
-	__webpack_require__(21)(app);
+	__webpack_require__(17)(app);
+	__webpack_require__(22)(app);
 	// require('./directives')(app);
 
 	app.config(['$routeProvider', function(router) {
@@ -64948,6 +64948,7 @@
 	  __webpack_require__(13)(app)
 	  __webpack_require__(14)(app)
 	  __webpack_require__(15)(app)
+	  __webpack_require__(16)(app)
 	}
 
 
@@ -65082,18 +65083,43 @@
 
 /***/ },
 /* 16 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
+	'use strict';
 	module.exports = (app) => {
-	  __webpack_require__(17)(app)
-	  __webpack_require__(18)(app)
-	  __webpack_require__(19)(app)
-	  __webpack_require__(20)(app)
+	  app.factory('TreeService', ['$http', function($http) {
+
+	    var path = '/trees'
+	    this.trees = null
+
+	    this.retrieve = function(next) {
+	      $http.get(path)
+	        .then(res => {
+	          this.trees = res.data.data;
+	          console.log(this.trees);
+	        })
+	        .catch(err => console.log(err))
+	    }
+
+	    return this;
+	  }])
 	}
 
 
 /***/ },
 /* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = (app) => {
+	  __webpack_require__(18)(app)
+	  __webpack_require__(19)(app)
+	  __webpack_require__(20)(app)
+	  __webpack_require__(21)(app)
+	}
+
+
+/***/ },
+/* 18 */
 /***/ function(module, exports) {
 
 	module.exports = (app) => {
@@ -65116,7 +65142,7 @@
 
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports) {
 
 	module.exports = (app) => {
@@ -65134,7 +65160,7 @@
 
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports) {
 
 	module.exports = (app) => {
@@ -65149,14 +65175,15 @@
 
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports) {
 
 	module.exports = (app) => {
-	  app.controller('SquirrelReportController', ['SquirrelReporter', function(SquirrelReporter) {
+	  app.controller('SquirrelReportController', ['SquirrelReporter', 'TreeService', function(SquirrelReporter, TreeService) {
 
 	    var vm = this
 	    vm.reporter = SquirrelReporter
+	    vm.TreeService = TreeService;
 
 	    vm.plz = "respond"
 
@@ -65197,24 +65224,24 @@
 
 
 /***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = function(app) {
-	  __webpack_require__(22)(app);
-	  __webpack_require__(24)(app);
-	  __webpack_require__(25)(app);
-	  __webpack_require__(26)(app);
-	}
-
-
-/***/ },
 /* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(app) {
-
 	  __webpack_require__(23)(app);
+	  __webpack_require__(25)(app);
+	  __webpack_require__(26)(app);
+	  __webpack_require__(27)(app);
+	}
+
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(app) {
+
+	  __webpack_require__(24)(app);
 
 	  app.component('navMenu', {
 	    templateUrl: './components/nav-menu/template.html',
@@ -65230,7 +65257,7 @@
 
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports) {
 
 	module.exports = function(app) {
@@ -65244,7 +65271,7 @@
 
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports) {
 
 	module.exports = function(app) {
@@ -65295,7 +65322,7 @@
 
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports) {
 
 	module.exports = function(app) {
@@ -65310,13 +65337,13 @@
 
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(app) {
 
-	  __webpack_require__(27)(app);
 	  __webpack_require__(28)(app);
+	  __webpack_require__(29)(app);
 
 	  app.component('sideBar', {
 	    templateUrl: './components/side-bar/template.html',
@@ -65328,7 +65355,7 @@
 
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports) {
 
 	module.exports = function(app) {
@@ -65343,12 +65370,12 @@
 
 
 /***/ },
-/* 28 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(app) {
 
-	  __webpack_require__(29)(app);
+	  __webpack_require__(30)(app);
 
 	  app.component('squirrelfeed', {
 	    templateUrl: './components/side-bar/squirrelfeed/template.html',
@@ -65360,7 +65387,7 @@
 
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports) {
 
 	module.exports = function(app) {

@@ -1,8 +1,9 @@
 module.exports = (app) => {
-  app.controller('SquirrelReportController', ['SquirrelReporter', function(SquirrelReporter) {
+  app.controller('SquirrelReportController', ['SquirrelReporter', 'TreeService', function(SquirrelReporter, TreeService) {
 
     var vm = this
     vm.reporter = SquirrelReporter
+    vm.TreeService = TreeService;
 
     vm.plz = "respond"
 
