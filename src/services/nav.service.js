@@ -25,7 +25,7 @@ module.exports = (app) => {
       bio: new Link('bio', '/bio', {x: 8, y: 65}),
       flickr: new Link('flickr', 'https://www.flickr.com/photos/142887762@N06/', {x: 86, y: 25}, true),
       squirrels: new Link('squirrels', '/squirrel-report', {x: 82, y: 45}),
-      plz: new Link('plz', '/plz', {x: 86, y: 65})
+      parkour: new Link('parkour', '/parkour', {x: 86, y: 65})
     }
 
     this.linksArr = (() => {

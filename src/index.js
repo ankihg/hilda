@@ -31,4 +31,7 @@ app.config(['$routeProvider', function(router) {
       controllerAs: 'sqCtrl',
       templateUrl: './views/squirrel-report.html'
     })
+    .when('/parkour', {
+      templateUrl: './views/parkour.html'
+    })
 }])
