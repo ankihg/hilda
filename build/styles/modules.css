@@ -74,8 +74,7 @@
 #parkour h1 {
   text-align: center; }
 #parkour video {
-  margin: 0px;
-  padding: 0px;
+  margin: 0 auto 2% 5%;
   max-width: 90%; }
 
 /*# sourceMappingURL=modules.css.map */
