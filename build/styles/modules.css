@@ -71,4 +71,11 @@
   .report-a-squirrel h3 {
     text-align: center; }
 
+#parkour h1 {
+  text-align: center; }
+#parkour video {
+  margin: auto;
+  margin-left: 5%;
+  max-width: 90%; }
+
 /*# sourceMappingURL=modules.css.map */
