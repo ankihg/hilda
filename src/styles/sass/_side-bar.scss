@@ -1,4 +1,5 @@
 #side-bar {
+  color: $purple;
 
   section {
   }
@@ -9,4 +10,12 @@
     display: inline;
   }
 
+}
+
+#squirrelfeed {
+  padding: 0 3% 0 3%;
+
+  h4 {
+    text-align: center;
+  }
 }

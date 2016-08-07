@@ -1,5 +1,5 @@
-<div data-ng-init="SquirrelReporter.retrieveSightings()">
-  squirrelfeed
+<div id="squirrelfeed" data-ng-init="SquirrelReporter.retrieveSightings()">
+  <h4>squirrelfeed<img src="./assets/squirrel2.png"></img></h4>
   </br>
   <span data-ng-repeat="sighting in SquirrelReporter.sightings.slice(0, 10)">
     <sighting sighting="sighting"></sighting>

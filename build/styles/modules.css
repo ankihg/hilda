@@ -17,10 +17,17 @@
   font-size: 125%;
   padding: 0 1% 0 1%; }
 
-#side-bar img {
-  width: 20%;
-  margin: 3%;
-  display: inline; }
+#side-bar {
+  color: #551A8B; }
+  #side-bar img {
+    width: 20%;
+    margin: 3%;
+    display: inline; }
+
+#squirrelfeed {
+  padding: 0 3% 0 3%; }
+  #squirrelfeed h4 {
+    text-align: center; }
 
 .toy {
   text-align: center; }
@@ -35,8 +42,8 @@
   display: inline;
   max-width: 100%; }
 #home hr {
-  border-color: #AF08CC;
-  background-color: #AF08CC;
+  border-color: #7B059C;
+  background-color: #7B059C;
   height: 1px; }
 
 #bio .welcome {
@@ -60,7 +67,7 @@
   background-color: #05F5DD;
   margin: 2%;
   padding: 2%;
-  border: solid #AF08CC; }
+  border: solid #7B059C; }
   .report-a-squirrel input {
     width: 40%; }
   .report-a-squirrel img {

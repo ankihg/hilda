@@ -1,4 +1,6 @@
 <div>
-  {{$ctrl.sighting.date | date:'medium'}} @ {{$ctrl.sighting.loc[1]}}, {{$ctrl.sighting.loc[0]}} by {{$ctrl.sighting.reporter}}
-  <br></br>
+  {{$ctrl.sighting.date | date:'medium'}} <br>
+  <small>{{$ctrl.sighting.loc[1]}}, {{$ctrl.sighting.loc[0]}}</small><br>
+   <small>by</small> {{$ctrl.sighting.reporter}}
+  <br><br>
 </div>
