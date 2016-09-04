@@ -60,7 +60,7 @@
 
 #squirrel-map {
   margin: 1% 10% 1% 10%;
-  color: black; }
+  color: #7B059C; }
 
 .angular-google-map-container {
   height: 700px;
@@ -89,5 +89,8 @@
   max-width: 90%; }
 #parkour img {
   margin-bottom: 2%; }
+
+.infowindow {
+  color: #05F5DD; }
 
 /*# sourceMappingURL=modules.css.map */

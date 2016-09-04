@@ -8,7 +8,7 @@
         options="{icon:'/../assets/squirrel2.png'}"
         click="sqCtrl.infowindowConfig.onClick(sighting._id)"  >
 
-      <ui-gmap-window
+      <ui-gmap-window class="infowindow"
           coords="{latitude:sighting.loc[1], longitude:sighting.loc[0]}"
           show="sqCtrl.infowindowConfig.selected === sighting._id"
           closeClick="sqCtrl.infowindowConfig.closeClick()">
@@ -24,9 +24,9 @@
         coords="{latitude:search.tree.lat, longitude:search.tree.lng}"
         idKey="search.search._id"
         options="{icon:'/../assets/tree2.png'}"
-        click="sqCtrl.infowindowConfig.onClick(search._id)"  >
+        click="sqCtrl.infowindowCosnfig.onClick(search._id)"  >
 
-      <ui-gmap-window style="max-width:200px"
+      <ui-gmap-window class="infowindow" style="max-width:200px"
           coords="{latitude:search.tree.lat, longitude:search.tree.lng}"
           show="sqCtrl.infowindowConfig.selected === search.search._id"
           closeClick="sqCtrl.infowindowConfig.closeClick()">
@@ -35,7 +35,7 @@
           {{search.tree.species.genus}} {{search.tree.species.species}} - {{search.tree.species.commonName}}
 
         </br>
-          <img src={{search.search.imgSrc}} style="max-width:200px"></img>
+          <img src={{search.search.imgSrc}} style="max-width:200px;border=solid"></img>
         </div>
       </ui-gmap-window>
 
