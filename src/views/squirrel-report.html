@@ -13,9 +13,14 @@
           show="sqCtrl.infowindowConfig.selected === sighting._id"
           closeClick="sqCtrl.infowindowConfig.closeClick()">
         <div>
-          <img src="/../assets/squirrel2.png"></img>
-          reported by <big>{{sighting.reporter}}</big><br/>
-          on <big>{{sighting.date | date:'medium'}}</big>
+          <span>
+            <img style="float:left;display:inline" src="/../assets/squirrel2.png"></img>
+            <div style="float:right">
+              <div data-ng-show="sighting.desc!=undefined">{{sighting.desc}}</div><br/>
+              reported by <big>{{sighting.reporter}}</big><br/>
+              on <big>{{sighting.date | date:'medium'}}</big>
+            </div>
+          </span>
         </div>
       </ui-gmap-window>
 
@@ -32,11 +37,14 @@
           show="sqCtrl.infowindowConfig.selected === search.search._id"
           closeClick="sqCtrl.infowindowConfig.closeClick()">
         <div>
-          {{search.tree.species.genus}} {{search.tree.species.species}} - {{search.tree.species.commonName}}</br>
-          {{search.tree.cityID}} <small>{{search.tree.lat}}, {{search.tree.lng}}</small>
+          <div class="highlight-box">
+            {{search.tree.species.genus}} {{search.tree.species.species}} - {{search.tree.species.commonName}}</br>
+            {{search.tree.cityID}} <br/>
+            <small>{{search.tree.lat}}, {{search.tree.lng}}</small>
 
-        </br>
-          <img src={{search.search.imgSrc}} style="max-width:200px;border=solid"></img>
+          </br>
+            <img src={{search.search.imgSrc}} style="max-width:200px;border=solid"></img>
+          </div>
         </div>
       </ui-gmap-window>
 
