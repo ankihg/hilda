@@ -5,6 +5,7 @@ module.exports = (mongoose, models) => {
     'SquirrelSighting',
      new mongoose.Schema({
         reporter: String,
+        desc: String,
         loc: {
           type: [ Number ],
           index: '2d'

@@ -1,0 +1,10 @@
+<div>
+  <img src="./assets/squirrel2.png" data-ng-click="NavService.go('squirrels')"></img>report a squirrel
+  <form data-ng-submit="SquirrelReporter.reportSighting()">
+    <input data-ng-model="SquirrelReporter.newSighting.loc.latitude" data-ng-value="SquirrelReporter.newSighting.loc.latitude" placeholder="lat"></input>
+    <input data-ng-model="SquirrelReporter.newSighting.loc.longitude" data-ng-value="SquirrelReporter.newSighting.loc.longitude" placeholder="lng"></input><br/>
+    <img src="/assets/squirrel.png"></img>
+    <input data-ng-model="SquirrelReporter.newSighting.reporter" placeholder="your name"></input>
+    <input type="submit" value="report"></input>
+  </form>
+</div>

@@ -10,7 +10,8 @@
 }
 
 .report-a-squirrel {
-  background-color: $color;
+  // background-color: $color;
+  background-color: rgba(255, 255, 255, .5);
   margin: 2%;
   padding: 2%;
   border: solid $borderColor2;

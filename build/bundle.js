@@ -65289,6 +65289,8 @@
 
 	      vm.plz = "respond"
 
+	      vm.geolocate = false;
+
 	      vm.map = {
 	        center: {latitude: 47.668313, longitude: -122.311065},
 	        zoom: 12,
@@ -65315,6 +65317,19 @@
 	          // this.options.visible = false;
 	          this.selected = null;
 	        }
+	      }
+
+	      vm.submit = function() {
+	        console.log('geolocate');
+	        console.log(vm.geolocate);
+	        console.log('get location');
+	        if (navigator.geolocation) {
+	          navigator.geolocation.getCurrentPosition(function(position) {
+	            console.log('here is ur location');
+	            console.log(position);
+	          });
+	        }
+	        // vm.reporter.reportSighting();
 	      }
 
 	      return vm
