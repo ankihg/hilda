@@ -1,13 +1,12 @@
 <div class="report-a-squirrel">
-  <h3>report a squirrel !!</h3>
-  <img src="/assets/squirrel.png"></img>
+  <h3>  <img src="/assets/squirrel.png"></img> report a squirrel !!</h3>
   <form data-ng-submit="sqCtrl.submit()">
-    <input data-ng-model="sqCtrl.reporter.newSighting.desc" placeholder="description"></input><br/>
-    <input type="checkbox" name="loc" data-ng-model="sqCtrl.geolocate" data-ng-change="sqCtrl.updateNewSightingLoc(); sqCtrl.reporter.clickToPlace=!sqCtrl.geolocate">geolocate</input><br/>
+    <input data-ng-model="sqCtrl.reporter.newSighting.desc" placeholder="description of events"></input><br/>
+    <input type="checkbox" name="loc" data-ng-model="sqCtrl.geolocate" data-ng-change="sqCtrl.updateNewSightingLoc(); sqCtrl.reporter.clickToPlace=!sqCtrl.geolocate">geolocate</input>
     <input type="checkbox" name="loc" data-ng-model="sqCtrl.reporter.clickToPlace" data-ng-change="sqCtrl.geolocate=!sqCtrl.reporter.clickToPlace">click to place</input><br/>
-    <input data-ng-model="sqCtrl.reporter.newSighting.loc.latitude" data-ng-value="sqCtrl.reporter.newSighting.loc.latitude" placeholder="lat"></input>
-    <input data-ng-model="sqCtrl.reporter.newSighting.loc.longitude" data-ng-value="sqCtrl.reporter.newSighting.loc.longitude" placeholder="lng"></input><br/>
-    <input data-ng-model="sqCtrl.reporter.newSighting.reporter" placeholder="your name"></input>
+    <input data-ng-model="sqCtrl.reporter.newSighting.loc.latitude" data-ng-value="sqCtrl.reporter.newSighting.loc.latitude" placeholder="lat" size="10"></input>
+    <input data-ng-model="sqCtrl.reporter.newSighting.loc.longitude" data-ng-value="sqCtrl.reporter.newSighting.loc.longitude" placeholder="lng" size="10"></input><br/>
+    <input data-ng-model="sqCtrl.reporter.newSighting.reporter" placeholder="your name" size="15"></input>
     <input type="submit" value="report"></input>
   </form>
 </div>
