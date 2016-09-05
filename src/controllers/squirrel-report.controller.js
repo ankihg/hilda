@@ -16,7 +16,8 @@ module.exports = (app) => {
       },
       events: {
         click: function(mapModel, eventName, originalEventArgs) {
-          console.log('clicked');
+          if (!vm.reporter.clickToPlace)
+            return;
           var e = originalEventArgs[0];
           vm.reporter.mapClickCoords.latitude = e.latLng.lat();
           vm.reporter.mapClickCoords.longitude = e.latLng.lng();

@@ -10,6 +10,7 @@ module.exports = (app) => {
       longitude: null
     }
 
+    this.clickToPlace = false;
     this.newSighting = {
       loc: this.mapClickCoords
     }
