@@ -12,7 +12,8 @@
   margin-bottom: 2%; }
 
 .nav-button {
-  border: solid #ED32D7;
+  color: #ED32D7;
+  border: solid #1157FA;
   position: absolute;
   font-size: 125%;
   padding: 0 1% 0 1%; }
@@ -89,6 +90,6 @@
   margin-bottom: 2%; }
 
 .infowindow {
-  color: #05F5DD; }
+  color: #1157FA; }
 
 /*# sourceMappingURL=modules.css.map */

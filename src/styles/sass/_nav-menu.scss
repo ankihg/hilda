@@ -15,7 +15,8 @@
 }
 
 .nav-button {
-  border: solid $borderColor;
+  color: $borderColor;
+  border: solid $color;
   position: absolute;
   font-size: 125%;
   padding: 0 1% 0 1%;
