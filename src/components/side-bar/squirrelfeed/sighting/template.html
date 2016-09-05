@@ -1,4 +1,5 @@
 <div>
+  <div data-ng-show="$ctrl.sighting.desc!=undefined">"{{$ctrl.sighting.desc}}"</div>
   {{$ctrl.sighting.date | date:'medium'}} <br>
   <small>{{$ctrl.sighting.loc[1]}}, {{$ctrl.sighting.loc[0]}}</small><br>
    <small>by</small> {{$ctrl.sighting.reporter}}
