@@ -13,14 +13,16 @@ module.exports = (router, models) => {
 
           Promise.all(data.map((d) => {
             return new Promise((resolve, reject) => {
-              http.get(config.TRUNKS_OF_SEATTLE+'/trees/id/'+d.cityID, resp => {
+              http.get(config.TRUNKS_OF_SEATTLE+'/api/trees/id/'+d.cityID, resp => {
                 let body = '';
                  resp.on('data', function(chunk) {
                    body += chunk;
                  });
                  resp.on('end', function() {
                    body = JSON.parse(body);
-                   resolve({search: d, tree: body.data.tree[0]});
+                   console.log('the tree');
+                   console.log(body.data);
+                   resolve({search: d, tree: body.data});
                  });
               })
             })}))
